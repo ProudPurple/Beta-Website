@@ -154,7 +154,7 @@ function Sessionbar({ collapsed, setCollapsed }) {
 
 
 function Layout({ dark, setDark }) {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
   
   return (
     <>
