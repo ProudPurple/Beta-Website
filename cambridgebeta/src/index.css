@@ -578,18 +578,48 @@ body.dark .hours-info { background: var(--navy-800); }
   flex-wrap: wrap;
 }
 
+.officers-focus-grid {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  gap: 5rem;
+  margin-left: 5rem;
+}
+
+
 .officer-card {
   text-align: center;
-  width: 120px;
+  width: 7rem;
+}
+
+.officer-focus-card {
+  display: flex;
+}
+
+.officer-description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .officer-photo-wrap {
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 0.6rem;
-  border: 3px solid var(--baby-400);
+  border: 0.3rem solid var(--baby-400);
+}
+
+.officer-focus-photo-wrap {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 0.3rem solid var(--baby-400);
 }
 
 .officer-photo {
@@ -610,6 +640,18 @@ body.dark .hours-info { background: var(--navy-800); }
   font-size: 1.5rem;
 }
 
+.officer-focus-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--navy-700);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 5rem;
+}
+
 .officer-name {
   font-size: 0.85rem;
   font-weight: 600;
@@ -619,6 +661,16 @@ body.dark .hours-info { background: var(--navy-800); }
 
 body.dark .officer-name { color: var(--baby-200); }
 
+.officer-focus-name {
+  margin-top: 3rem;
+  font-size: 5rem;
+  font-weight: 600;
+  color: var(--navy-700);
+  margin-bottom: 0.2rem;
+}
+
+body.dark .officer-focus-name { color: var(--baby-200); }
+
 .officer-role {
   font-size: 0.75rem;
   color: var(--navy-500);
@@ -626,6 +678,32 @@ body.dark .officer-name { color: var(--baby-200); }
 }
 
 body.dark .officer-role { color: var(--baby-400); }
+
+.officer-focus-role {
+  font-size: 3rem;
+  color: var(--navy-500);
+  font-weight: 300;
+}
+
+body.dark .officer-focus-role { color: var(--baby-400); }
+
+.philanthropy-description {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--navy-500);
+  font-weight: 300;
+}
+
+body.dark .philanthropy-description { color: var(--baby-400); }
+
+.philanthropy-url {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--navy-500);
+  font-weight: 300;
+}
+
+body.dark .philanthropy-url { color: var(--baby-400); }
 
 /* ── EVENTS ── */
 .events-list { display: flex; flex-direction: column; gap: 0.75rem; }

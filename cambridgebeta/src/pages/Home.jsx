@@ -1,28 +1,17 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { supabase } from '../supabaseClient'
 
 export default function Home() {
   const [officers, setOfficers] = useState([])
-  const [events, setEvents] = useState([])
-  const [activeSession, setActiveSession] = useState(null)
-  const [mission, setMission] = useState('')
-  const [announcement, setAnnouncement] = useState('')
-  const navigate = useNavigate()
 
   useEffect(() => {
-    fetchAll()
+    fetchOfficers()
   }, [])
 
-  async function fetchAll() {
-    const [officersRes, sessionRes, missionRes, ] = await Promise.all([
-      supabase.from('officers').select('*'),
-      supabase.from('sessions').select('*').eq('is_open', true).limit(1),
-    ])
-
-    if (officersRes.data) setOfficers(officersRes.data)
-
-    if (sessionRes.data?.length) setActiveSession(sessionRes.data[0])
+  async function fetchOfficers() {
+    const officersRes = await supabase.from('officers').select('*');
+    if (officersRes.data)
+       setOfficers(officersRes.data)
   }
 
   return (
@@ -40,7 +29,7 @@ export default function Home() {
         <h2 className="section-heading">Our Mission</h2>
         <div className="card">
           <p className="mission-text">
-            {mission || 'The National Beta Club began as the dream of our founder, Dr. John W. Harris, a professor at Wofford College in Spartanburg, SC. Since the first Beta Club was formed in Landrum, SC in 1934, The National Beta Club has become the nation’s largest independent, non-profit, educational youth organization. We are committed to recognizing and promoting high academic achievement, rewarding and nurturing worthy character, fostering leadership skills and encouraging service to others.'}
+            {'The National Beta Club began as the dream of our founder, Dr. John W. Harris, a professor at Wofford College in Spartanburg, SC. Since the first Beta Club was formed in Landrum, SC in 1934, The National Beta Club has become the nation’s largest independent, non-profit, educational youth organization. We are committed to recognizing and promoting high academic achievement, rewarding and nurturing worthy character, fostering leadership skills and encouraging service to others.'}
           </p>
         </div>
       </section>

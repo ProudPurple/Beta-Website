@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { supabase } from './supabaseClient'
 
 import Home from './pages/Home'
-import About from './pages/About'
+import JoinUs from './pages/JoinUs'
 import Officers from './pages/Officers'
 import Philanthropies from './pages/Philanthropies'
 import Schedule from './pages/Schedule'
@@ -17,6 +17,7 @@ import OpenSession from './pages/officer/OpenSession'
 import logo from './assets/cambridge-logo.png'
 
 import './index.css'
+import { SupabaseClient } from '@supabase/supabase-js'
 
 const NAV = [
   {
@@ -25,7 +26,7 @@ const NAV = [
     links: [
       { to: '/', label: 'Home' },
       { to: '/requirements', label: 'Requirements' },
-      { to: '/about', label: 'Mission & hours' },
+      { to: '/joinus', label: 'Join Us' },
       { to: '/officers', label: 'Officers' },
       { to: '/philanthropies', label: 'Philanthropies' },
     ],
@@ -56,6 +57,8 @@ function Sidebar({ dark, setDark, collapsed, setCollapsed }) {
   function toggle(label) {
     setOpen(prev => ({ ...prev, [label]: !prev[label] }))
   }
+
+
 
   return (
     <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
@@ -121,14 +124,12 @@ function Sessionbar({ collapsed, setCollapsed }) {
   }, []);
 
   async function fetchSession() {
-    const sessionRes = await supabase
-      .from('sessions')
-      .select('*')
-      .eq('is_open', true)
-      .limit(1);
+    const result = await supabase.from('sessions').select('*')
 
-    if (sessionRes.data?.length) {
-      setActiveSession(sessionRes.data[0]);
+    if (result.data?.length) {
+      setActiveSession(result.data[0]);
+    } else {
+      console.log("FUCK");
     }
   }
 
@@ -161,7 +162,7 @@ function Layout({ dark, setDark }) {
         <Sessionbar collapsed={collapsed} setCollapsed={setCollapsed} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/joinus" element={<JoinUs />} />
           <Route path="/requirements" element={<Requirements />} />
           <Route path="/officers" element={<Officers />} />
           <Route path="/philanthropies" element={<Philanthropies />} />
