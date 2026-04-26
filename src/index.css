@@ -177,7 +177,7 @@ body.dark .theme-btn:hover {
 .nav-section-header .chevron {
   margin-left: auto;
   transition: transform var(--transition);
-  font-size: 0.65rem;
+  font-size: 1rem;
 }
 
 .nav-section-header.open .chevron { transform: rotate(90deg); }

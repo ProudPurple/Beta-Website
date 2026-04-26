@@ -90,7 +90,7 @@ function Sidebar({ dark, setDark, collapsed, setCollapsed }) {
             >
               <span>{section.icon}</span>
               {!collapsed && <span>{section.label}</span>}
-              {!collapsed && <span className="chevron">▶</span>}
+              {!collapsed && <span className="chevron">{">"}</span>}
             </div>
             {!collapsed && (
               <div className={`nav-sub ${open[section.label] ? 'open' : ''}`}>
