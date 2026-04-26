@@ -313,23 +313,132 @@ body.dark .card {
 
 /* ── MOBILE (wire up later) ── */
 @media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-    width: var(--sidebar-w) !important;
-    transition: transform 0.25s ease;
-    box-shadow: 4px 0 24px rgba(0,0,0,0.3);
-  }
 
-  .sidebar.mobile-open {
-    transform: translateX(0);
-  }
-
+  /* ── MAIN CONTENT ── */
   .main {
-    margin-left: 0 !important;
+    margin-left: 56px !important;
+    padding: 1rem !important;
   }
 
-  .backdrop {
-    display: block;
+  /* ── TYPOGRAPHY SCALE DOWN ── */
+  .page-heading {
+    font-size: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 1.4rem;
+  }
+
+  .section-heading {
+    font-size: 1rem;
+  }
+
+  /* ── FIX OVERSIZED CARD TEXT ── */
+  .join-card-title {
+    font-size: 1.2rem !important;
+  }
+
+  .join-card-sub {
+    font-size: 0.75rem !important;
+  }
+
+  /* ── FIX CARD LAYOUT ── */
+  .join-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .join-card {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  .join-divider {
+    text-align: center;
+    padding: 0.25rem 0;
+  }
+
+  /* ── HOURS GRID ── */
+  .hours-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hours-divider {
+    text-align: center;
+  }
+
+  .hours-card {
+    min-width: unset;
+  }
+
+  /* ── SIDEBAR COLLAPSED STATE ── */
+  .sidebar-top {
+    width: 3rem;
+    justify-content: center;
+    padding: 0.6rem 0;
+  }
+
+  .collapse-btn {
+    font-size: 0.85rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-section-header {
+    justify-content: center;
+    padding: 0.6rem 0.6rem;
+  }
+
+  /* ── CALENDAR ── */
+  .cal-cell {
+    min-height: 50px;
+    padding: 0.25rem;
+  }
+
+  .cal-day-num {
+    font-size: 0.72rem;
+  }
+
+  .cal-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .cal-month-label {
+    font-size: 0.95rem;
+  }
+
+  /* ── OFFICER CARDS ── */
+  .officer-focus-card {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .officer-focus-photo-wrap {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .officer-focus-name {
+    font-size: 1.75rem !important;
+    margin-top: 0 !important;
+  }
+
+  .officer-focus-role {
+    font-size: 1.1rem !important;
+  }
+
+  .officers-focus-grid {
+    margin-left: 0 !important;
+    margin-top: 1.5rem;
+    gap: 2rem;
   }
 }
 
@@ -344,10 +453,11 @@ body.dark .card {
 
 .sidebar-top {
   padding: 0.6rem 0.75rem;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   border-bottom: 1px solid var(--navy-600);
-  flex-shrink: 0;
+
 }
 
 body.dark .sidebar-top {
