@@ -8,6 +8,7 @@ import JoinUs from './pages/JoinUs'
 import Officers from './pages/Officers'
 import Philanthropies from './pages/Philanthropies'
 import Schedule from './pages/Schedule'
+import Forms from './pages/Forms'
 import Requirements from './pages/Requirements'
 import CheckIn from './pages/CheckIn'
 import Dashboard from './pages/officer/Dashboard'
@@ -32,16 +33,22 @@ const NAV = [
     ],
   },
   {
-    label: 'Attendance',
-    icon: '◈',
+    label: 'Events',
+    icon: '▦',
     links: [
-      { to: '/schedule', label: 'Schedule' },
+      { to: '/schedule', label: 'Calender' },
       { to: '/checkin', label: 'Check in' },
+      { to: '/forms', label: 'Forms' },
     ],
   },
   {
-    label: 'Officers',
+    label: 'News',
     icon: '◆',
+    links: [],
+  },
+  {
+    label: 'Officer Controls',
+    icon: '⊛',
     links: [
       { to: '/officer/dashboard', label: 'Dashboard' },
       { to: '/officer/session', label: 'Open session' },
@@ -124,12 +131,10 @@ function Sessionbar({ collapsed, setCollapsed }) {
   }, []);
 
   async function fetchSession() {
-    const result = await supabase.from('sessions').select('*')
+    const result = await supabase.from('sessions').select('*').eq('is_open', 'TRUE')
 
     if (result.data?.length) {
       setActiveSession(result.data[0]);
-    } else {
-      console.log("FUCK");
     }
   }
 
@@ -168,6 +173,7 @@ function Layout({ dark, setDark }) {
           <Route path="/philanthropies" element={<Philanthropies />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/checkin" element={<CheckIn />} />
+          <Route path="/forms" element={<Forms />} />
           <Route path="/officer/dashboard" element={<Dashboard />} />
           <Route path="/officer/session" element={<OpenSession />} />
           <Route path="/officer/records" element={<Records />} />
