@@ -311,18 +311,31 @@ body.dark .card {
   margin-left: 3rem;
 }
 
-/* ── MOBILE (wire up later) ── */
+/* ── MOBILE ── */
 @media (max-width: 768px) {
+
+  /* ── TOPBAR ── */
+  :root { --topbar-h: 3.5rem; }
+
+  .topbar-title {
+    font-size: 1.2rem;
+  }
 
   /* ── MAIN CONTENT ── */
   .main {
-    margin-left: 56px !important;
-    padding: 1rem !important;
+    margin-left: 3rem !important;
+    padding: 0.875rem !important;
   }
 
   /* ── TYPOGRAPHY SCALE DOWN ── */
   .page-heading {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .page-sub {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero-title {
@@ -333,7 +346,35 @@ body.dark .card {
     font-size: 1rem;
   }
 
-  /* ── FIX OVERSIZED CARD TEXT ── */
+  .mission-text {
+    font-size: 0.85rem;
+  }
+
+  /* ── ANNOUNCEMENT ── */
+  .announcement-card {
+    font-size: 0.82rem;
+    padding: 0.75rem 1rem;
+  }
+
+  /* ── SESSION BANNER ── */
+  .session-banner {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .home-section {
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── JOIN CARDS ── */
   .join-card-title {
     font-size: 1.2rem !important;
   }
@@ -342,7 +383,6 @@ body.dark .card {
     font-size: 0.75rem !important;
   }
 
-  /* ── FIX CARD LAYOUT ── */
   .join-grid {
     flex-direction: column;
     align-items: stretch;
@@ -363,6 +403,7 @@ body.dark .card {
   .hours-grid {
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: 1.5rem;
   }
 
   .hours-divider {
@@ -371,6 +412,23 @@ body.dark .card {
 
   .hours-card {
     min-width: unset;
+    padding: 1rem;
+  }
+
+  .hours-number {
+    font-size: 1.25rem;
+  }
+
+  .hours-label {
+    font-size: 0.8rem;
+  }
+
+  .hours-sub {
+    font-size: 0.7rem;
+  }
+
+  .hours-icon {
+    font-size: 1.2rem;
   }
 
   /* ── SIDEBAR COLLAPSED STATE ── */
@@ -415,30 +473,69 @@ body.dark .card {
     font-size: 0.95rem;
   }
 
+  .cal-legend {
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .cal-legend-item {
+    font-size: 0.7rem;
+  }
+
+  .cal-events-panel {
+    padding: 0.75rem 1rem;
+  }
+
+  .cal-event-item {
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .cal-event-title {
+    font-size: 0.82rem;
+  }
+
   /* ── OFFICER CARDS ── */
   .officer-focus-card {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    align-items: center;
   }
 
   .officer-focus-photo-wrap {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .officer-focus-photo-placeholder {
+    font-size: 2.5rem;
   }
 
   .officer-focus-name {
     font-size: 1.75rem !important;
     margin-top: 0 !important;
+    text-align: center;
   }
 
   .officer-focus-role {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
+    text-align: center;
   }
 
   .officers-focus-grid {
     margin-left: 0 !important;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     gap: 2rem;
+  }
+
+  /* ── PHILANTHROPY ── */
+  .philanthropy-description {
+    font-size: 0.9rem;
+  }
+
+  .philanthropy-url {
+    font-size: 0.85rem;
   }
 }
 

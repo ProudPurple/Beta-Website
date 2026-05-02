@@ -1,16 +1,38 @@
-# React + Vite
+# Beta Club Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official website for the Beta Club honors society chapter at [Your High School Name].
 
-Currently, two official plugins are available:
+Live at: https://cambridgebeta-chi.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About
 
-## React Compiler
+Beta Club is a national honors society recognizing students for academic achievement and service. This site serves as the online home for our chapter — announcements, events, membership info, and more.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Running locally
 
-## Expanding the ESLint configuration
+Requires [Node.js](https://nodejs.org/) (v18 or later).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173 in your browser.
+
+## Building for production
+
+```bash
+npm run build
+```
+
+Output goes to the `dist/` folder. The site is deployed automatically to Vercel on every push to `master`.
+
+## Tech stack
+
+- [React](https://react.dev/) — UI framework
+- [Vite](https://vitejs.dev/) — build tool and dev server
+- [Vercel](https://vercel.com/) — hosting and deployment
+
+## Contributing
+
+If you're a club officer and want to update content, clone the repo, make your changes, and open a pull request. Changes merged to `master` deploy automatically.
