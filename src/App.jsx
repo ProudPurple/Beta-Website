@@ -32,7 +32,7 @@ const NAV = [
       { to: '/philanthropies', label: 'Philanthropies' },
     ],
   },
-  {
+  /*{
     label: 'Events',
     icon: '▦',
     links: [
@@ -55,7 +55,7 @@ const NAV = [
       { to: '/officer/records', label: 'Records' },
       { to: '/officer/content', label: 'Manage content' },
     ],
-  },
+  },*/
 ]
 
 function Sidebar({ dark, setDark, collapsed, setCollapsed }) {

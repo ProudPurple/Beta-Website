@@ -2,7 +2,7 @@
 
 The official website for the Cambridge Beta Club chapter. Built and maintained by the chapter webmaster to keep members, advisors, and prospective members informed about events, news, and club resources.
 
-🌐 **Live site:** [cambridgebeta-chi.vercel.app](https://cambridgebeta-chi.vercel.app)
+ ### **Live site:** [cambridgebeta-chi.vercel.app](https://cambridgebeta-chi.vercel.app)
 
 ---
 

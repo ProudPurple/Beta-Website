@@ -17,19 +17,23 @@ export default function Philanthropies() {
   return (
     <div>
       <h1 className="page-heading">Featured Philanthropies</h1>
-      <div className="officer-focus-grid">
+      <div className="philanthropies-grid">
         {philanthropies.map(philanthropy => (
-          <div className="officer-focus-card" key={philanthropy.id}>
-            <div className="officer-focus-photo-wrap">
+          <div className="philanthropy-card" key={philanthropy.id}>
+            <div className="philanthropy-photo-wrap">
               {philanthropy.photo_url
-                ? <img src={philanthropy.photo_url} alt={philanthropy.name} className="officer-photo" />
-                : <div className="officer-focus-photo-placeholder">{philanthropy.title?.[0]}</div>
+                ? <img src={philanthropy.photo_url} alt={philanthropy.title} className="philanthropy-photo" />
+                : <div className="philanthropy-photo-placeholder">{philanthropy.title?.[0]}</div>
               }
             </div>
-            <div className='officer-description'>
-              <div className="officer-focus-name">{philanthropy.title}</div>
+            <div className="philanthropy-body">
+              <div className="philanthropy-title">{philanthropy.title}</div>
               <div className="philanthropy-description">{philanthropy.description}</div>
-              <div className="philanthropy-url"><a href={philanthropy.url} target="_blank" rel="noopener noreferrer">Click Here to See Their Website</a></div>
+              {philanthropy.url && (
+                <a href={philanthropy.url} target="_blank" rel="noopener noreferrer" className="philanthropy-link">
+                  Visit Website →
+                </a>
+              )}
             </div>
           </div>
         ))}

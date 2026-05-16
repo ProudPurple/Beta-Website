@@ -16,7 +16,7 @@ export default function JoinUs() {
           </div>
         </div>
       </section>
-      <div className="card"><p>Join the GroupMe to Get Future Updates</p></div>
+      <div className="card"><p style={{textAlign: "center"}}>Join the GroupMe to Get Future Updates</p></div>
     </div>
   )
 }

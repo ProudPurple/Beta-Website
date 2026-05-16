@@ -25,7 +25,7 @@ export default function Requirements() {
                 </div>
             </div>
             <div className="card">
-                <h2 className="page-sub">Hours must come from a verifiable organization and cannot be from family members</h2>
+                <p style = {{textAlign: "center"}}>Hours must come from a verifiable organization and cannot be from family members</p>
             </div>
         </section>
     </div>
