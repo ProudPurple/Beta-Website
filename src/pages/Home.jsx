@@ -9,14 +9,13 @@ export default function Home() {
   }, [])
 
   async function fetchOfficers() {
-    const officersRes = await supabase.from('officers').select('*');
+    const officersRes = await supabase.from('officers').select('*').order('order', {ascending: true});
     if (officersRes.data)
        setOfficers(officersRes.data)
   }
 
   return (
     <div>
-
       {/* ── HERO ── */}
       <div className="hero">
         <div className="hero-badge">2026 – 2027</div>

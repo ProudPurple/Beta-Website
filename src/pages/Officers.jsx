@@ -9,7 +9,7 @@ export default function Officers() {
   }, [])
 
   async function fetchOfficers() {
-    const officersRes = await supabase.from('officers').select('*');
+    const officersRes = await supabase.from('officers').select('*').order('order', {ascending: true});
     if (officersRes.data)
         setOfficers(officersRes.data)
   }
