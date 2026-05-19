@@ -9,10 +9,9 @@ export default function Philanthropies() {
   }, [])
 
   async function fetchPhilanthropies() {
-    const philanthropyRes = await supabase.from('content').select('*');
+    const philanthropyRes = await supabase.from('philanthropies').select('*');
     if (philanthropyRes.data)
-        setPhilanthropies(philanthropyRes.data)
-    console.log(philanthropyRes.data);
+        setPhilanthropies(philanthropyRes.data);
   }
   return (
     <div>

@@ -9,7 +9,7 @@ export default function Home() {
   }, [])
 
   async function fetchOfficers() {
-    const officersRes = await supabase.from('officers').select('*').order('order', {ascending: true});
+    const officersRes = await supabase.from('officers').select('*').order('id', {ascending: true});
     if (officersRes.data)
        setOfficers(officersRes.data)
   }
@@ -57,10 +57,7 @@ export default function Home() {
             {officers.map(officer => (
               <div className="officer-card" key={officer.id}>
                 <div className="officer-photo-wrap">
-                  {officer.photo_url
-                    ? <img src={officer.photo_url} alt={officer.name} className="officer-photo" />
-                    : <div className="officer-photo-placeholder">{officer.name?.[0]}</div>
-                  }
+                  <div className="officer-photo-placeholder">{officer.name?.split(' ').map(n => n[0]).join('')}</div>
                 </div>
                 <div className="officer-name">{officer.name}</div>
                 <div className="officer-role">{officer.role}</div>

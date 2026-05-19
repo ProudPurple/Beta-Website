@@ -9,7 +9,7 @@ import JoinUs from './pages/JoinUs'
 import Requirements from './pages/Requirements'
 import Attendance from './pages/Attendance'
 import Officers from './pages/Officers'
-import Oppurtunities from './pages/Oppurtunities'
+import Events from './pages/Events'
 import Philanthropies from './pages/Philanthropies'
 import logo from './assets/cambridge-logo.png'
 
@@ -27,7 +27,7 @@ const NAV = [
       { to: '/requirements', label: 'Requirements' },
       { to: '/attendance', label: 'Attendance' },
       { to: '/officers', label: 'Officers' },
-      { to: '/oppurtunities', label: 'Oppurtunities' },
+      { to: '/Events', label: 'Events' },
       { to: '/philanthropies', label: 'Philanthropies' },
     ],
   },
@@ -58,7 +58,7 @@ function Sidebar({ dark, setDark, collapsed, setCollapsed }) {
 
       <nav className="sidebar-nav">
         {NAV.map(section => (
-          <div className={`nav-sub ${open[section.label] ? 'open' : ''}`}>
+          <div key={section.label} className={`nav-sub ${open[section.label] ? 'open' : ''}`}>
             {section.links.map(link => (
               <NavLink
                 key={link.to}
@@ -103,7 +103,7 @@ function Layout({ dark, setDark }) {
           <Route path="/requirements" element={<Requirements />} />
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/officers" element={<Officers />} />
-          <Route path="/oppurtunities" element={<Oppurtunities />} />
+          <Route path="/Events" element={<Events />} />
           <Route path="/philanthropies" element={<Philanthropies />} />
         </Routes>
       </main>
