@@ -240,6 +240,16 @@ body.dark .page-heading { color: var(--baby-400); }
 
 body.dark .page-sub { color: var(--baby-400); }
 
+.page-note {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--navy-500);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+body.dark .page-note { color: var(--baby-400); }
+
 .card {
   background: #fff;          /* 1. Add this */
   align-items: center;        /* 2. Vertically centers items */
@@ -547,6 +557,15 @@ body.dark .hours-divider { color: var(--baby-400); }
   }
   .hours-divider {
     text-align: center;
+  }
+}
+
+.attendance-grid { flex-wrap: nowrap; }
+
+@container (max-width: 640px) {
+  .attendance-grid {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

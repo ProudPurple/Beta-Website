@@ -20,8 +20,8 @@ export default function Philanthropies() {
         {philanthropies.map(philanthropy => (
           <div className="philanthropy-card" key={philanthropy.id}>
             <div className="philanthropy-photo-wrap">
-              {philanthropy.photo_url
-                ? <img src={philanthropy.photo_url} alt={philanthropy.title} className="philanthropy-photo" />
+              {philanthropy.img
+                ? <img src={philanthropy.img} alt={philanthropy.title} className="philanthropy-photo" />
                 : <div className="philanthropy-photo-placeholder">{philanthropy.title?.[0]}</div>
               }
             </div>
