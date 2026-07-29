@@ -22,7 +22,7 @@ export default function Events() {
             <div className="philanthropy-photo-wrap">
               {event.url
                 ? <img src={event.url} alt={event.title} className="philanthropy-photo" />
-                : <div className="philanthropy-photo-placeholder">{(event.date?.[5] != '0' ? event.date?.[5] : '') + event.date?.[6] + '/' + event.date?.[8] + event.date?.[9]}</div>
+                : <div className="philanthropy-photo-placeholder">{(event.date?.[5] != '0' ? event.date?.[5] : '') + event.date?.[6] + '/' + (event.date?.[8] != '0' ? event.date?.[8] : '') + event.date?.[9]}</div>
               }
             </div>
             <div className="philanthropy-body">
