@@ -9,10 +9,9 @@ export default function Philanthropies() {
   }, [])
 
   async function fetchPhilanthropies() {
-    const philanthropyRes = await supabase.from('content').select('*');
+    const philanthropyRes = await supabase.from('philanthropies').select('*');
     if (philanthropyRes.data)
-        setPhilanthropies(philanthropyRes.data)
-    console.log(philanthropyRes.data);
+        setPhilanthropies(philanthropyRes.data);
   }
   return (
     <div>
@@ -21,8 +20,8 @@ export default function Philanthropies() {
         {philanthropies.map(philanthropy => (
           <div className="philanthropy-card" key={philanthropy.id}>
             <div className="philanthropy-photo-wrap">
-              {philanthropy.photo_url
-                ? <img src={philanthropy.photo_url} alt={philanthropy.title} className="philanthropy-photo" />
+              {philanthropy.img
+                ? <img src={philanthropy.img} alt={philanthropy.title} className="philanthropy-photo" />
                 : <div className="philanthropy-photo-placeholder">{philanthropy.title?.[0]}</div>
               }
             </div>

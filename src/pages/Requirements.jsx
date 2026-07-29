@@ -26,6 +26,9 @@ export default function Requirements() {
             </div>
             <div className="card">
                 <p style = {{textAlign: "center"}}>Hours must come from a verifiable organization and cannot be from family members</p>
+            <a href={'https://drive.google.com/uc?export=download&id=1_B7b73CFG10vmlEu39VuWw5up3dZKLze'} target="_blank" rel="noopener noreferrer" className="download-link">
+                Download Hours Sheet
+            </a>
             </div>
         </section>
     </div>
