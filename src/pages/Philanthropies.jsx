@@ -18,7 +18,7 @@ export default function Philanthropies() {
       <h1 className="page-heading">Featured Philanthropies</h1>
       <div className="philanthropies-grid">
         {philanthropies.map(philanthropy => (
-          <div className="philanthropy-card" key={philanthropy.id}>
+          <div className="philanthropy-card" key={philanthropy.title}>
             <div className="philanthropy-photo-wrap">
               {philanthropy.img
                 ? <img src={philanthropy.img} alt={philanthropy.title} className="philanthropy-photo" />

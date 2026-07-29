@@ -18,11 +18,11 @@ export default function Events() {
       <h1 className="page-heading">Upcoming Events</h1>
       <div className="philanthropies-grid">
         {events.map(event => (
-          <div className="philanthropy-card" key={event.id}>
+          <div className="philanthropy-card" key={event.title}>
             <div className="philanthropy-photo-wrap">
               {event.url
                 ? <img src={event.url} alt={event.title} className="philanthropy-photo" />
-                : <div className="philanthropy-photo-placeholder">{event.title?.[0]}</div>
+                : <div className="philanthropy-photo-placeholder">{(event.date?.[5] != '0' ? event.date?.[5] : '') + event.date?.[6] + '/' + event.date?.[8] + event.date?.[9]}</div>
               }
             </div>
             <div className="philanthropy-body">

@@ -251,6 +251,8 @@ body.dark .page-sub { color: var(--baby-400); }
 body.dark .page-note { color: var(--baby-400); }
 
 .card {
+  display: flex;
+  flex-direction: column;
   background: #fff;          /* 1. Add this */
   align-items: center;        /* 2. Vertically centers items */
   justify-content: center; /* 3. (Optional) Horizontally centers items */
@@ -843,7 +845,7 @@ body.dark .philanthropy-link:hover {
 
 /* ── DOWNLOAD LINKS ── */
 .download-link {
-  display: flex;
+  text-align: center;
   width: fit-content;
   margin: 1rem auto 0;
   font-size: 2rem;
@@ -920,13 +922,6 @@ body.dark .download-link:hover {
     gap: 0.5rem;
   }
 
-  /* ── CARDS ── */
-  .card {
-    font-size: 1rem;
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-  }
-
   .home-section {
     margin-bottom: 1.5rem;
   }
@@ -957,23 +952,6 @@ body.dark .download-link:hover {
   }
 
   /* ── SIDEBAR COLLAPSED STATE ── */
-  .sidebar-top {
-    width: 3rem;
-    justify-content: center;
-    padding: 0.6rem 0;
-  }
-
-  .collapse-btn {
-    font-size: 0.85rem;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-  }
-
   .nav-section-header {
     justify-content: center;
     padding: 0.6rem 0.6rem;
