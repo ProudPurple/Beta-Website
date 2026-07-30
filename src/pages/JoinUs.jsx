@@ -18,7 +18,7 @@ export default function JoinUs() {
       </section>
       <div className="card">
         <p style={{textAlign: "center"}}>All communications including introductary meeting will be through GroupMe</p>
-        <a href={'https://groupme.com/join_group/109361843/LghvyGQt'} target="_blank" rel="noopener noreferrer" className="download-link">
+        <a href={'https://groupme.com/join_group/116216788/lbsblSWk'} target="_blank" rel="noopener noreferrer" className="download-link">
           Join GroupMe
         </a>
       </div>
