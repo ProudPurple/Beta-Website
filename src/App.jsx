@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from './supabaseClient'
@@ -15,6 +15,17 @@ import logo from './assets/cambridge-logo.png'
 
 import './index.css'
 import { SupabaseClient } from '@supabase/supabase-js'
+
+const PAGE_TITLES = {
+  '/': 'Cambridge Beta Club',
+  '/about': 'About',
+  '/joinus': 'Join Us',
+  '/requirements': 'Requirements',
+  '/attendance': 'Attendance',
+  '/officers': 'Officers',
+  '/Events': 'Events',
+  '/philanthropies': 'Philanthropies',
+}
 
 const NAV = [
   {
@@ -86,12 +97,17 @@ function Sidebar({ dark, setDark, collapsed, setCollapsed }) {
 
 function Layout({ dark, setDark }) {
   const [collapsed, setCollapsed] = useState(true)
-  
+  const location = useLocation()
+
+  useEffect(() => {
+    document.title = PAGE_TITLES[location.pathname] ?? 'Cambridge Beta Club'
+  }, [location.pathname])
+
   return (
     <>
       <header className="topbar">
         <div className="topbar-title">Cambridge Beta Club</div>
-        <img className="topbar-icon" src={logo}/>
+        <img className="topbar-icon" src={logo} alt="Cambridge High School Logo" />
       </header>
       <Sidebar dark={dark} setDark={setDark} collapsed={collapsed} setCollapsed={setCollapsed} />
       <main className={`main ${collapsed ? 'collapsed' : ''}`}>

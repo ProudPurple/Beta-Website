@@ -9,7 +9,8 @@ export default function Events() {
   }, [])
 
   async function fetchEvents() {
-    const eventRes = await supabase.from('events').select('*').order('date', {ascending: true});
+    const today = new Date().toISOString().slice(0, 10)
+    const eventRes = await supabase.from('events').select('*').gte('date', today).order('date', {ascending: true});
     if (eventRes.data)
         setEvents(eventRes.data)
   }
