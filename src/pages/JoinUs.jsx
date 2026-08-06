@@ -2,7 +2,7 @@ export default function JoinUs() {
   return (
     <div>
       <h1 className="page-heading">Join Us</h1>
-      <p className="page-sub">Requirements to Join In the <span style={{whiteSpace: 'nowrap'}}>2026-2027</span> School Year</p>
+      <h2 className="page-sub">Requirements to Join In the <span style={{whiteSpace: 'nowrap'}}>2026-2027</span> School Year</h2>
       <section className="home-section">
         <div className="hours-grid">
           <div className="hours-card hours">

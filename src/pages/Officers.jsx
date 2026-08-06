@@ -21,7 +21,7 @@ export default function Officers() {
           <div className="officer-focus-card" key={officer.id}>
             <div className="officer-focus-photo-wrap">
               {officer.img
-                ? <img src={officer.img} alt={officer.name} className="officer-photo" />
+                ? <img src={officer.img} alt={officer.name} className="officer-photo" alt={officer.name} />
                 : <div className="officer-focus-photo-placeholder">{officer.name?.split(' ').map(n => n[0]).join('')}</div>
               }
             </div>
